@@ -8,7 +8,7 @@ app.get("/", (req, res)=>{
     res.send("index") //modificar depois
 });
 
-mongoose.connect("mongodb+srv://camila_chang:camila_chang@cluster0.gcljv.mongodb.net/escola?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://usuario:senha@cluster0.gcljv.mongodb.net/escola?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
 
 app.set("view engine", "ejs");
 app.set("views", __dirname,"/views");
