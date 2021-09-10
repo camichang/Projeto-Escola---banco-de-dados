@@ -13,5 +13,7 @@ router.get("/deletarAluno/:id", alunosController.deletarAluno);
 router.get("/editarAluno/:id", alunosController.editarAluno_get);
 router.post("/editarAluno", alunosController.editarAluno_post);
 
+router.get("/pesquisar", alunosController.pesquisar_get);
+
 
 module.exports = router;

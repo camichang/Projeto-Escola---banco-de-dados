@@ -68,6 +68,16 @@ exports.editarAluno_post = (req, res)=>{
             if(err)
             return res.status(500).send("Erro ao salvar")
             return res.redirect("/alunos");
-        })
+        });
+    });
+};
+
+exports.pesquisar_get = (req, res)=>{
+    var busca = req.query.pesquisa;
+    alunosBancoDados.find({$or:[{nomeAluno:busca}, {nomeResp:busca}, {contato:busca}, {endereco:busca}, {matricula:busca}]}, (err, aluno)=>{
+        if(err)
+        return res.status(500).send("Erro ao pesquisar")
+        res.render("views/pages/alunos", {resultado:aluno})
     })
 }
+
